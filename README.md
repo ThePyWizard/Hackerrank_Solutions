@@ -291,3 +291,56 @@ output
 abd
 ```
 ****
+
+
+## 7. Flatland Space Stations
+
+  - [Problem](https://www.hackerrank.com/challenges/flatland-space-stations/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](flatlandspacestations.py) (navigate to the Solution file)
+  - Explanation:
+  >Flatland is a country with a number of cities, some of which have space stations. Cities are numbered consecutively and each has a road of 1km length connecting it to the next city. It is not a circular route, so the first city doesn't connect with the last city. Determine the maximum distance from any city to its nearest space station.
+
+#### The flatlandSpaceStations function takes an input n that is the number of cities and c[m] which is the indices of cities with a space station and determine the maximum distance from any city to its nearest space station.
+
+ code with an example. Consider the following input:
+
+```python
+def flatlandSpaceStations(n, c):
+    c.sort()
+    prev_st=c[0]
+    max_dist=c[0]
+    for i in range(1,len(c)):
+        current_st=c[i]
+        dist=(current_st-prev_st)//2
+        max_dist=max(max_dist,dist)
+        prev_st=current_st
+    max_dist=max(max_dist,n-1-prev_st)
+    return max_dist
+
+```
+ The superReducedString function will perform the following steps:
+  First we need to sort the space station locations (c) and then initialize max_distance to 0.
+  After that, start with the first space station (prev_station) at the first element of c and calculate the distance from the first city to the first space station and set it as max_distance.
+  Then iterate through the sorted space station locations:
+  a. Calculate the distance from the current space station to the previous one.
+  b. Update max_distance if the new distance is larger.
+  c. Update prev_station for the next iteration.
+  Check the distance between the last space station and the last city.
+  Return the final max_distance, representing the farthest city from its nearest space station.
+
+ Example input: 6 6
+                0 1 2 4 3 5
+
+ Returns the max distance: 0
+
+#### Sample input & output
+input
+```
+6 6
+0 1 2 4 3 5
+```
+output
+```
+0
+```
+****
