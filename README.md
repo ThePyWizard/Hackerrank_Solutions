@@ -390,3 +390,41 @@ output
 3
 ```
 ****
+
+## 8. Find the Median
+
+  - [Problem](https://www.hackerrank.com/challenges/find-the-median/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](findthemedian.py) (navigate to the Solution file)
+  - Explanation:
+  >The median of a list of numbers is essentially its middle element after sorting. The same number of elements occur after it as before. Given a list of numbers with an odd number of elements, find the median?
+
+#### The findMedian function takes arr which is an array as an input and returns the median of the array by sorting it and finding the mid index element.
+
+ code with an example. Consider the following input:
+
+```python
+def findMedian(arr):
+    arr.sort()
+    mid_index=len(arr)//2
+    return arr[mid_index]
+
+```
+The findmedian function will perform the following steps:
+We give input array into function and sort it using sort() and finds the mid index using len(arr)//2.
+And returns the mid index element from the array.
+
+ Example input: 7
+                0 1 2 4 6 5 3
+ Returns the median: 3
+
+#### Sample input & output
+input
+```
+7
+0 1 2 4 6 5 3
+```
+output
+```
+3
+```
+****
