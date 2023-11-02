@@ -244,3 +244,50 @@ output
 1 2
 ```
 ****
+
+
+## 6. Super Reduced String
+
+  - [Problem](https://www.hackerrank.com/challenges/reduced-string/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](superreducedstring.py) (navigate to the Solution file)
+  - Explanation:
+  >Reduce a string of lowercase characters in range ascii[‘a’..’z’]by doing a series of operations. In each operation, select a pair of adjacent letters that match,    and delete them.
+  Delete as many characters as possible using this method and return the resulting string. If the final string is empty, return Empty String
+
+#### The superReducedString function takes an input string and iteratively removes adjacent matching characters until no more matches can be found. It returns the resulting string or "Empty String" if the final string is empty.
+
+ code with an example. Consider the following input:
+
+```python
+def superReducedString(s):
+    sample=[]
+    for i in s:
+        if sample and sample[-1] == i:
+            sample.pop()
+        else:
+            sample.append(i)
+    if not sample:
+        return "Empty String"
+    else:
+        return ''.join(sample)
+
+```
+ The superReducedString function will perform the following steps:
+  Initialize a stack and we can iterate through the input string.
+  And remove adjacent matching characters from the string by using the stack. If the final string is empty, return "Empty String."
+  If not empty, return the resulting string without adjacent matching characters.
+
+ Example input: aaabccddd
+
+ Return the reduced string: abd
+
+#### Sample input & output
+input
+```
+aaabccddd
+```
+output
+```
+abd
+```
+****
