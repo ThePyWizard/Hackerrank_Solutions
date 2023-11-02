@@ -428,3 +428,61 @@ output
 3
 ```
 ****
+
+## 9. Missing Numbers
+
+  - [Problem](https://www.hackerrank.com/challenges/missing-numbers/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](missingnumbers.py) (navigate to the Solution file)
+  - Explanation:
+  >Given two arrays of integers, find which elements in the second array are missing from the first array.If a number occurs multiple times in the lists, you must ensure that the frequency of that number in both lists is the same. If that is not the case, then it is also a missing number.
+Return the missing numbers sorted ascending.
+Only include a missing number once, even if it is missing multiple times.
+The difference between the maximum and minimum numbers in the original list is less than or equal to 100.
+
+#### The missingNumbers function takes two arrays arr and brr as input and then finds the missing elements in first array from second array.
+
+ code with an example. Consider the following input:
+
+```python
+def missingNumbers(arr, brr):
+    count_a={}
+    count_b={}
+    for i in arr:
+        count_a[i]=count_a.get(i,0)+1
+    for i in brr:
+        count_b[i]=count_b.get(i,0)+1
+    missing=[]
+    uni=set(arr+brr)
+    for i in uni:
+        count_d=count_b.get(i,0)-count_a.get(i,0)
+        if count_d>0 and count_d<=100:
+            missing.append(i)
+    missing.sort()
+    return missing
+
+```
+The missingNumbers function will perform the following steps:
+It initialize the count_a and count_b as empty dictionaries which can be used as counters.
+Calculate the difference between the count_a and count_b to get the numbers that appear more times in brr than in arr.
+Filter the numbers to include only those with count differences greater than 0 and less than or equal to 100.
+Then we have to sort the missing numbers in ascending order and return the list of missing numbers.
+
+ Example input: 10
+                203 204 205 206 207 208 203 204 205 206
+                13
+                203 204 204 205 206 207 205 208 203 206 205 206 204
+ Returns the median: 204 205 206
+
+#### Sample input & output
+input
+```
+10
+203 204 205 206 207 208 203 204 205 206
+13
+203 204 204 205 206 207 205 208 203 206 205 206 204
+```
+output
+```
+204 205 206
+```
+****
