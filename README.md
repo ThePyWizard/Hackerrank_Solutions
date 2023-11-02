@@ -471,7 +471,7 @@ Then we have to sort the missing numbers in ascending order and return the list 
                 203 204 205 206 207 208 203 204 205 206
                 13
                 203 204 204 205 206 207 205 208 203 206 205 206 204
- Returns the median: 204 205 206
+ Returns the missing number: 204 205 206
 
 #### Sample input & output
 input
@@ -484,5 +484,58 @@ input
 output
 ```
 204 205 206
+```
+****
+
+
+## 10. Sherlock and Array
+
+  - [Problem](https://www.hackerrank.com/challenges/sherlock-and-array/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](sherlockandarray.py) (navigate to the Solution file)
+  - Explanation:
+  >Watson gives Sherlock an array of integers. His challenge is to find an element of the array such that the sum of all elements to the left is equal to the sum of all elements to the right.
+
+#### The balancedSums function takes an array as input and then finds an element of the array such that the sum of all elements to the left is equal to the sum of all elements to the right.
+
+ code with an example. Consider the following input:
+
+```python
+def balancedSums(arr):
+    left_sum=0
+    total=sum(arr)
+    for i in arr:
+        total-=i
+        if left_sum==total:
+            return "YES"
+        left_sum+=i
+    return "NO"
+
+```
+The balancedSums function will perform the following steps:
+We need to first calculate the total sum of all elements in the array and then initialize leftsum to 0.
+Then when we iterate through the elements:
+we deduct the current element from the total sum and check if left sum is equal to the remaining total sum and then update left sum with the current element.
+If a match is found then return Yes and otherwise return No.
+
+ Example input: 2
+                3
+                1 2 3
+                4
+                1 2 3 3
+ Returns the whether its balanced sum or not: NO YES
+
+#### Sample input & output
+input
+```
+2
+3
+1 2 3
+4
+1 2 3 3
+```
+output
+```
+NO
+YES
 ```
 ****
