@@ -189,3 +189,58 @@ output
 2
 ```
 ****
+
+## 5. Ice Cream Parlor
+
+  - [Problem](https://www.hackerrank.com/challenges/icecream-parlor/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](icecreamparlor.py) (navigate to the Solution file)
+  - Explanation:
+  >Two friends like to pool their money and go to the ice cream parlor. They always choose two distinct flavors and they spend all of their money.Given a list of prices for the flavors of ice cream, select the two that will cost all of the money they have.
+
+#### icecreamParlor function takes list of prices for the flavors of ice cream, select the two that will cost all of the money they have.
+
+ code with an example. Consider the following input:
+
+```python
+def icecreamParlor(m, arr):
+    sample={}
+    for i in range(len(arr)):
+        a=arr[i]
+        budget_remaining=m-a
+        if budget_remaining in sample:
+            return [sample[budget_remaining]+1,i+1]
+        sample[a]=i
+        
+
+```
+The icecreamParlor function will perform the following steps: 
+This code takes two inputs: 'm' (the customer's budget) and 'arr' (a list of ice cream prices). It then iterates through the list to find two ice cream flavors whose prices add up to the customer's budget 'm'. When it finds a suitable pair, it returns the 1-based indices of these flavors, making it easy for customers to choose their desired ice cream combination.
+
+ Example input: 2
+                4
+                5
+                1 4 5 3 2
+                4
+                4
+                2 2 4 3
+
+ Return the suitable pair of icecream combination that will be on budget: 1 4
+1 2
+
+#### Sample input & output
+input
+```
+2
+4
+5
+1 4 5 3 2
+4
+4
+2 2 4 3
+```
+output
+```
+1 4
+1 2
+```
+****
