@@ -146,4 +146,46 @@ output
 ```
 ****
 
+## 4. The Hurdle Race
 
+  - [Problem](https://www.hackerrank.com/challenges/the-hurdle-race/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](hurdlerace.py) (navigate to the Solution file)
+  - Explanation:
+  >Complete the hurdleRace function in the editor below.
+    A video player plays a game in which the character competes in a hurdle race. Hurdles are of varying heights, and the characters have a maximum height they can jump. There is a magic potion they can take that will increase their maximum jump height by 1 unit      for each dose. How many doses of the potion must the character take to be able to jump all of the hurdles. If the character can already clear all of the hurdles, return 0.
+    hurdleRace has the following parameter(s):
+    int k: the height the character can jump naturally
+    int height[n]: the heights of each hurdle
+
+#### The Hurdle Race function will return the maximum times the player has to drink the potion to jump across all hurdles.
+
+ code with an example. Consider the following input:
+
+```python
+def hurdleRace(k, height):
+    biggest_hurdle=max(height)
+    if k>biggest_hurdle:
+        return 0
+    else:
+        return biggest_hurdle-k
+
+```
+ The hurdleRace function will perform the following steps:
+ It will take k which is the natural height in which the player can jump and height which is the heights of each hurdle. We will find maximum height of the hurdle using max() since height is a array and compare it with k and if k>biggest hurdle, then we will return 0 which means it doesn't take any potion to jump and else we will return biggest_hurdle-k.
+
+ Example input: 5 4
+                1 6 3 5 2
+
+ Return amount of time potion needs to consumed: 2
+
+#### Sample input & output
+input
+```
+5 4
+1 6 3 5 2
+```
+output
+```
+2
+```
+****
