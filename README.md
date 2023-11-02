@@ -100,3 +100,50 @@ output
 ****
 
 
+## 3. Diagonal Difference
+
+  - [Problem](https://www.hackerrank.com/challenges/diagonal-difference/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](diagonaldifference.py) (navigate to the Solution file)
+  - Explanation:
+  >The task is to return the absolute difference between the sums of the matrix's two diagonals as a single integer.
+
+#### digonalDifference function takes 'a' which is the matrix size and 'arr' which is the matrix. and computes the leftsum and rightsum using forloop and returns the absolute value using abs() on the difference between leftsum and rightsum.
+
+ code with an example. Consider the following input:
+
+```python
+def diagonalDifference(a,arr):
+    leftsum=0
+    rightsum=0
+    for i in range(a):
+        leftsum+=arr[i][i]
+        rightsum+=arr[i][a-i-1]
+    return abs(leftsum-rightsum)
+        
+
+```
+ The Diagonal Difference function will perform the following steps:
+ It takes 'a' which is the matrix size and 'arr' which is the matrix. and computes the leftsum and rightsum of diagonals using forloop and returns the absolute value using abs() on the difference between leftsum and rightsum.
+
+ Example input: 3
+                11 2 4
+                4 5 6
+                10 8 -12
+
+ Return the absolute value between the sums of the matrix's two diagonals as a single integer: 15
+
+#### Sample input & output
+input
+```
+3
+11 2 4
+4 5 6
+10 8 -12
+```
+output
+```
+15
+```
+****
+
+
