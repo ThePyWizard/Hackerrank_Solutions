@@ -344,3 +344,49 @@ output
 0
 ```
 ****
+
+
+## 7. Pairs
+
+  - [Problem](https://www.hackerrank.com/challenges/pairs/problem?isFullScreen=true)(navigate to the Problem)
+  - [Solution](pairs.py) (navigate to the Solution file)
+  - Explanation:
+  >Given an array of integers and a target value, determine the number of pairs of array elements that have a difference equal to the target value.
+
+#### The pairs function takes an input of k where k is an integer and arr is an array of integers. and it returns the pair from the array whose difference equal to the target value of k.
+
+ code with an example. Consider the following input:
+
+```python
+def pairs(k, arr):
+    a=set(arr)
+    count=0
+    for i in arr:
+        if i+k in a:
+            count+=1
+    return count
+
+```
+The pairs function will perform the following steps:
+It creates a set called unique_elements to store the unique values from the given array arr and then initialize a variable count to 0 to keep track of the count of pairs with a difference of k.
+And when we iterate through the elements in the arr:
+For each element num, we check if num + k is present in the unique_elements set.
+If num + k exists in the set, it means there is a pair with a difference of k. Increment the count by 1.
+Then return the final value of count, which represents the count of pairs with a difference of k.
+
+ Example input: 5 2
+                1 5 3 4 2
+
+ Returns the max distance: 3
+
+#### Sample input & output
+input
+```
+5 2
+1 5 3 4 2
+```
+output
+```
+3
+```
+****
