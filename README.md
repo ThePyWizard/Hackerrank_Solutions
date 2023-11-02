@@ -29,6 +29,7 @@ def aVeryBigSum(a,ar):
 
 ```
  The aVeryBigSum function will perform the following steps:
+ It will take array length and the array as input and will add the array elements and will return the longint sum of the array elements.
 
  Example input: 5
                 1000000001 1000000002 1000000003 1000000004 1000000005
